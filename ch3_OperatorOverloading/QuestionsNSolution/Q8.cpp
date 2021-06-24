@@ -19,7 +19,7 @@ class city{
         }
         void display(){
             cout<<"CityName: "<<CityName<<endl;
-            cout<<"Distance From Kathamandu: "<<DistFromKtm<<endl;
+            cout<<"Distance From Kathamandu: "<<DistFromKtm<<"km"<<endl;
         }
         float operator+(city c){
             return(this-> DistFromKtm+c.DistFromKtm);
