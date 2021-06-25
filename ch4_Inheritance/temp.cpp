@@ -1,3 +1,6 @@
+/*
+
+*/
 #include<iostream>
 using namespace std;
 
@@ -7,7 +10,6 @@ class Bas
     protected:
 
     public:
-        Bas(){}           //default constructor
         void read();
         void display();
 };
