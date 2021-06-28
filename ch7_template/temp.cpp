@@ -12,20 +12,16 @@ class Base{
             cout<<"In base , Data: "<<data<<endl;
         }
 };
-
 template <class T>
-class Derived:public Base<int> {
-    T data;
+class Derived:public Base<T>
+{
     public:
         Derived(){}
-        Derived(int a, T b):Base<int>(a),data(b){}
-        void show(){
-            Base::show();
-            cout<<"In Derived , Data: "<<data<<endl;
-        }
+        Derived(T a):Base<T>(a){}
+
 };
 int main(){
-    Derived<float> obj(5,3.43);
+    Derived<float> obj(7);
     obj.show();
     return 0;
 }
