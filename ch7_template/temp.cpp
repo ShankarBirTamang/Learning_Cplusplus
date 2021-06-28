@@ -1,29 +1,31 @@
+//Derived class template
 #include<iostream>
 using namespace std;
 
-template<class T>
-class base{
+template <class T>
+class Base{
     T data;
     public:
-        base(){}
-        base(T a){
-            data = a;
-        }
+        Base(){}
+        Base(T a){ data = a; }
         void show(){
-            cout<<"Data: "<<data<<endl;
+            cout<<"In base , Data: "<<data<<endl;
         }
 };
 
-class Derived:public base<int>
-{
+template <class T>
+class Derived:public Base<int> {
+    T data;
     public:
         Derived(){}
-        Derived(int a):base<int>(a){}
-
+        Derived(int a, T b):Base<int>(a),data(b){}
+        void show(){
+            Base::show();
+            cout<<"In Derived , Data: "<<data<<endl;
+        }
 };
-
 int main(){
-    Derived obj(6);
+    Derived<float> obj(5,3.43);
     obj.show();
     return 0;
 }
