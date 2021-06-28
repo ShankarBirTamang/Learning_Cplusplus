@@ -1,4 +1,5 @@
-// We can also add extra template parameter in the derived class along with the base class template parameter.
+//The derived class template can be created from the base class which is not a class template. In this case , a template parameter is 
+//added in the derived class during inheritance.
 
 #include<iostream>
 using namespace std;
@@ -15,7 +16,7 @@ class Base{
 
 template <class T>
 class derived:public Base{
-    T data;
+    T data;3
     public:
         derived(){}
         derived(int a, T b):Base(a),data(b){}
