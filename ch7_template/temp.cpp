@@ -1,28 +1,29 @@
 #include<iostream>
 using namespace std;
 
-template <class T1, class T2, class T3>
-class Record{
-    T1 a;
-    T2 b;
-    T3 c;
-    public: 
-        Record(T1 x, T2 y, T3 z){
-            a = x;
-            b = y;
-            c = z;
+template<class T>
+class base{
+    T data;
+    public:
+        base(){}
+        base(T a){
+            data = a;
         }
-        void show();
+        void show(){
+            cout<<"Data: "<<data<<endl;
+        }
 };
-template <class T1, class T2, class T3>
-void Record<T1,T2,T3>::show(){
-    cout<<a<<"\t"<<b<<"\t"<<c<<endl;
-}
+
+class Derived:public base<int>
+{
+    public:
+        Derived(){}
+        Derived(int a):base<int>(a){}
+
+};
 
 int main(){
-    Record<int , float , char> obj1(1, 3.2 , 'u');
-    Record<char, int , float> obj2('s',2,5.6);
-    obj1.show();
-    obj2.show();
+    Derived obj(6);
+    obj.show();
     return 0;
 }
