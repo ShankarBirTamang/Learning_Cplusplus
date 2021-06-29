@@ -3,29 +3,30 @@
 #include<math.h>
 using namespace std;
 
-class NEG{
+class NEG
+{
     public:
         double value;
         char description[20];
         NEG(){
-            value = 0;
+            value =0;
             strcpy(description,"\0");
         }
         NEG(double v, char *desc){
             value = v;
-            strcpy(description,desc);
+            strcpy(description, desc);
         }
 };
 
-class Number{
+class Number
+{
     double num;
     public:
         void readnum();
         double sqroot();
 };
-
 void Number::readnum(){
-    cout<<"Enter number: ";
+    cout<<"\nEnter number: "<<endl;
     cin>>num;
 }
 double Number::sqroot(){
@@ -40,15 +41,15 @@ int main(){
     double res;
     n1.readnum();
     try{
-        cout<<"\nTyring to find out square root..."<<endl;
+        cout<<"\nTrying to find out square root...";
         res = n1.sqroot();
-        cout<<"\nSquare root is : "<<res<<endl;
-        cout<<"Success ! Exception is not raised."<<endl;
+        cout<<"\nSquare root is: "<<res<<endl;
+        cout<<"Success... Exception is not raised."<<endl;
     }
     catch(NEG n)
     {
         cout<<"\nException occured in square root of "<<n.value<<endl;
-        cout<<"\nError! "<<n.description<<endl;
+        cout<<"Error! "<<n.description<<endl;
     }
     return 0;
 }
